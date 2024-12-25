@@ -1,0 +1,84 @@
+@import './base.css';
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: Poppins;
+  src: url(./fonts/Poppins/Poppins-Regular.ttf);
+}
+
+.layout-grid {
+  grid-row-gap: 16px;
+  grid-column-gap: 16px;
+  grid-template-rows: auto auto;
+  grid-template-columns: 1fr 1fr;
+  grid-auto-columns: 1fr;
+  display: grid;
+}
+
+@media screen and (max-width: 479px) {
+  .brand-name {
+    font-size: 16px;
+  }
+
+  .container,
+  .nav-link {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  .container {
+    max-width: none;
+  }
+
+  .navbar-brand {
+    min-width: 100px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .navbar-brand {
+    margin-left: -10px;
+    padding-left: 10px;
+  }
+
+  .menu-button {
+        -webkit-text-fill-color: inherit;
+        background-color: #fff;
+        background-clip: border-box;
+        display: block !important;
+    }
+}
+
+@media screen and (max-width: 991px) {
+  .navbar-brand {
+    margin-left: -10px;
+    padding-left: 0;
+  }
+
+  .nav-link {
+    color: #000;
+    background-color: #fff;
+    padding: 10px 30px;
+  }
+
+  .nav-link.button {
+    color: #000;
+    background-color: #fff;
+    border-radius: 0;
+    margin-top: 0;
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+
+  .menu-button {
+        color: #000;
+        -webkit-text-fill-color: transparent;
+        background-color: #000;
+        -webkit-background-clip: text;
+        background-clip: text;
+    }
+}
