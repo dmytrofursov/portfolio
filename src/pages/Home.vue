@@ -5,7 +5,8 @@ import Container from '../components/ui/Container.vue';
 import TextBlock from '../components/ui/TextBlock.vue';
 import Heading from '../components/ui/Heading.vue';
 import HeroCamera from '../components/hero-camera/HeroCamera.vue'
-import ExperienceList from '@/components/ui/ExperienceList.vue';
+import ExperienceList from '../components/ui/ExperienceList.vue';
+import { Suspense } from 'vue';
 </script>
 
 <template>
@@ -27,7 +28,6 @@ import ExperienceList from '@/components/ui/ExperienceList.vue';
       <Suspense>
         <!-- component with nested async dependencies -->
         <ExperienceList />
-
         <!-- loading state via #fallback slot -->
         <template #fallback>
           Loading...
