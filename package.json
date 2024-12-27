@@ -9,7 +9,11 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@datocms/cma-client-browser": "^3.4.0",
+    "@datocms/cma-client-node": "^3.4.0",
     "@fortawesome/fontawesome-svg-core": "^6.7.2",
+    "@vercel/analytics": "^1.4.1",
+    "@vercel/speed-insights": "^1.1.0",
     "vue": "^3.5.13",
     "vue-router": "^4.0.13"
   },

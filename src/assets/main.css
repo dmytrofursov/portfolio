@@ -1,4 +1,4 @@
-@import './base.css';
+@import "./base.css";
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -6,6 +6,18 @@
 @font-face {
   font-family: Poppins;
   src: url(./fonts/Poppins/Poppins-Regular.ttf);
+}
+
+CollectionItem {
+  min-width: 100px !important;
+  min-height: 100px !important;
+  background: red;
+}
+
+.experience-list {
+  margin: 0 -10px;
+  background-color: #fff0;
+  box-shadow: 0 2px 20px #0000001a;
 }
 
 .layout-grid {
@@ -46,11 +58,11 @@
   }
 
   .menu-button {
-        -webkit-text-fill-color: inherit;
-        background-color: #fff;
-        background-clip: border-box;
-        display: block !important;
-    }
+    -webkit-text-fill-color: inherit;
+    background-color: #fff;
+    background-clip: border-box;
+    display: block !important;
+  }
 }
 
 @media screen and (max-width: 991px) {
@@ -75,10 +87,10 @@
   }
 
   .menu-button {
-        color: #000;
-        -webkit-text-fill-color: transparent;
-        background-color: #000;
-        -webkit-background-clip: text;
-        background-clip: text;
-    }
+    color: #000;
+    -webkit-text-fill-color: transparent;
+    background-color: #000;
+    -webkit-background-clip: text;
+    background-clip: text;
+  }
 }
