@@ -9,21 +9,30 @@ import ExperienceList from '@/components/ui/ExperienceList.vue';
 </script>
 
 <template>
-    <Header />
+  <Header />
 
-    <!--Hero Camera-->
-    <Section>
-      <Container>
-        <TextBlock text="welcome!" />
-        <Heading headingText="I innovate your robotized projects." />
-      </Container>
-      <HeroCamera />
-    </Section>
+  <!--Hero Camera-->
+  <Section>
+    <Container>
+      <TextBlock text="welcome!" />
+      <Heading headingText="I innovate your robotized projects." />
+    </Container>
+    <HeroCamera />
+  </Section>
 
-    <Section>
-      <Container>
-        <h2 class="secondary-heading">Experience</h2>
+  <!--Expreince Company Logos-->
+  <Section>
+    <Container>
+      <h2 class="secondary-heading">Experience</h2>
+      <Suspense>
+        <!-- component with nested async dependencies -->
         <ExperienceList />
-      </Container>
-    </Section>
-  </template>
+
+        <!-- loading state via #fallback slot -->
+        <template #fallback>
+          Loading...
+        </template>
+      </Suspense>
+    </Container>
+  </Section>
+</template>

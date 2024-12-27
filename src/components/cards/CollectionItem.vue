@@ -1,5 +1,5 @@
 <script setup>
-const props = defineProps([listItemClasses])
+const props = defineProps(["listItemClasses"])
 </script>
 
 <template>

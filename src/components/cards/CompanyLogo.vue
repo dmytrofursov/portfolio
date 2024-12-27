@@ -6,7 +6,7 @@ const props = defineProps([
 </script>
 
 <template>
-    <!--img sizes="(max-width: 479px) 100px, (max-width: 767px) 200px, (max-width: 1919px) 22vw, 370px" loading="eager"  alt={{customAlt}} src={{ sourceImg }} class="company-logo"/>-->
+    <img sizes="(max-width: 479px) 100px, (max-width: 767px) 200px, (max-width: 1919px) 22vw, 370px" loading="eager"  alt={{customAlt}} src={{ sourceImg }} class="company-logo"/>
 </template>
 
 <script>

@@ -2,42 +2,38 @@
 import CollectionListWrapper from '../cards/CollectionListWrapper.vue';
 import CollectionList from '../cards/CollectionList.vue';
 import CollectionItem from '../cards/CollectionItem.vue';
-//import CompanyLogo from '../cards/CompanyLogo.vue';
-import { buildClient } from '@datocms/cma-client-node';
+import CompanyLogo from '../cards/CompanyLogo.vue';
+import { buildClient } from '@datocms/cma-client-browser';
 
-const APITOKEN =  'b5103d578b85fd73f1c2c8235b8d12'
+const API_TOKEN = 'b5103d578b85fd73f1c2c8235b8d12'
+const client = buildClient({ apiToken: API_TOKEN });
 
-const client = buildClient({
-  apiToken: APITOKEN,
-  lofLevel: LogLevel.BASIC
-});
-
-const allRecords = []
-
-for await (
-    const record of client.items.listPagedIterator(
-        
-    )
-) {
-    allRecords.push(record)
-}
+//fetching data from cms
+const allRecords = await client.items.rawList()
 
 console.log(allRecords)
-
 </script>
 
 <template>
     <CollectionListWrapper>
         <CollectionList listClass="experience-list">
-            <CollectionItem listItemClasses="">
-                <!--<CompanyLogo />-->
+            <CollectionItem v-for="record in allRecords" listItemClasses="">
+                <CompanyLogo sourceImg={{record.company_project_logo }} />
             </CollectionItem>
         </CollectionList>
     </CollectionListWrapper>
 </template>
 
 <script>
+
+
 export default {
-    name: "ExperienceList"
+    name: "ExperienceList",
+    components: {
+        CollectionItem,
+        CollectionList,
+        CollectionListWrapper,
+        CompanyLogo
+    }
 }
 </script>
