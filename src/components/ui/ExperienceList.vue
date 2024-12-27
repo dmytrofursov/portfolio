@@ -9,7 +9,7 @@ const API_TOKEN = 'b5103d578b85fd73f1c2c8235b8d12'
 const client = buildClient({ apiToken: API_TOKEN });
 
 //fetching data from cms
-const allRecords = await client.items.rawList()
+Vue.prototype.$allRecords = await client.items.rawList()
 
 console.log(allRecords)
 </script>
@@ -17,9 +17,12 @@ console.log(allRecords)
 <template>
     <CollectionListWrapper>
         <CollectionList listClass="experience-list">
-            <CollectionItem v-for="record in allRecords" listItemClasses="">
-                <CompanyLogo sourceImg={{record.company_project_logo }} />
+            <CompanyLogo listItemClass="" v-for="record in allRecords" :imageSource="record.company_project_logo" sourceImg={{ imageSource }} />
+            <!--
+            <CollectionItem  listItemClasses="">
+                <CompanyLogo v-for="record in allRecords" :imageSource="record.company_project_logo" sourceImg={{imageSource }} />
             </CollectionItem>
+            -->
         </CollectionList>
     </CollectionListWrapper>
 </template>

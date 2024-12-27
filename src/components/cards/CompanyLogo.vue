@@ -1,17 +1,25 @@
 <script setup>
+import CollectionItem from './CollectionItem.vue';
+
 const props = defineProps([
     "sourceImg",
-    "customAlt"
+    "customAlt",
+    "listItemClass"
 ])
 </script>
 
 <template>
-    <img sizes="(max-width: 479px) 100px, (max-width: 767px) 200px, (max-width: 1919px) 22vw, 370px" loading="eager"  alt={{customAlt}} src={{ sourceImg }} class="company-logo"/>
+    <CollectionItem listItemClasses={{ listItemClass }}>
+        <img src={{ sourceImg }} class="company-logo"/>
+    </CollectionItem>
 </template>
 
 <script>
 export default {
-    name: "CompanyLogo"
+    name: "CompanyLogo",
+    components: {
+        CollectionItem
+    }
 }
 </script>
 
